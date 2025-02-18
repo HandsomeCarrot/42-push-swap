@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:05:33 by vpoka             #+#    #+#             */
-/*   Updated: 2025/02/18 13:02:38 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/02/18 15:25:48 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ t_list	*create_new_node(char *str, int str_pos)
  * - Uses ft_lstnew for node creation
  * - Uses ft_lstadd_back for list construction
  */
-t_list	*create_list(int ac, char **av, int *empty)
+t_list	*create_list(int ac, char **av)
 {
 	t_list	*top;
 	t_list	*new_node;
@@ -154,8 +154,6 @@ t_list	*create_list(int ac, char **av, int *empty)
 			if (!new_node)
 				return (ft_lstclear(&top, &free), NULL);
 			ft_lstadd_back(&top, new_node);
-			if (empty && *empty == 1 && top)
-				*empty = 0;
 			str_pos = skip_nums(av[arg], str_pos);
 			str_pos = skip_space(str_pos, av[arg]);
 		}

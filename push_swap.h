@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:07:59 by vpoka             #+#    #+#             */
-/*   Updated: 2025/01/30 14:14:52 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/02/18 15:25:37 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void				rrr(t_stack *a, t_stack *b);
 
 //--------list.c--------//
 
-t_list				*create_list(int ac, char **av, int *empty);
+t_list				*create_list(int ac, char **av);
 
 //--------sort.c--------//
 

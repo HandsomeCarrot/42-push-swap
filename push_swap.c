@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 18:01:43 by vpoka             #+#    #+#             */
-/*   Updated: 2025/01/30 14:32:24 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/02/18 15:25:51 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,12 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 	t_list	*list_top;
-	int		empty_lst;
 
 	if (ac == 1)
-		return (1);
-	empty_lst = 1;
-	list_top = create_list(ac, av, &empty_lst);
-	if (empty_lst || !list_top)
 		return (0);
+	list_top = create_list(ac, av);
+	if (!list_top)
+		return (write(2, "Error\n", sizeof(char) * 6), 1);
 	a = new_stack(list_top);
 	b = new_stack(NULL);
 	if (!a || !b || list_has_duplicates(a->top))

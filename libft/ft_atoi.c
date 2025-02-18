@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:13:03 by vpoka             #+#    #+#             */
-/*   Updated: 2025/01/27 18:41:29 by vpoka            ###   ########.fr       */
+/*   Updated: 2024/09/25 19:16:37 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,11 @@
  */
 int	ft_atoi(const char *nptr)
 {
-	long int		result;
-	long int		max;
-	int				sign;
+	long	res;
+	int		sign;
 
 	sign = 1;
-	max = 2147483648;
-	result = 0;
+	res = 0;
 	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\v'
 		|| *nptr == '\f' || *nptr == '\r')
 		nptr++;
@@ -36,19 +34,24 @@ int	ft_atoi(const char *nptr)
 		sign = -1;
 	if (*nptr == '+' || *nptr == '-')
 		nptr++;
-	while (ft_isdigit(*nptr) && result <= max)
+	while (ft_isdigit(*nptr))
 	{
-		result = result * 10 + (*nptr - '0');
+		res = res * 10 + (*nptr - '0');
+		if (res > INT_MAX)
+		{
+			if (sign == 1)
+				return (INT_MAX);
+			else
+				return (INT_MIN);
+		}
 		nptr++;
 	}
-	if ((result > max) || (result > max - 1 && sign > 0))
-		return (0);
-	return (sign * result);
+	return (sign * res);
 }
 
 /* #include <stdio.h>
 int	main(void)
 {
-	char *n = "   2147483649";
+	char *n = "   -2147483648";
 	printf("%d\n", ft_atoi(n));
 } */

@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:43:47 by vpoka             #+#    #+#             */
-/*   Updated: 2025/01/21 21:13:23 by vpoka            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:23:50 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
  */
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst->content)
-		del(lst->content);
+	del(lst->content);
 	free(lst);
 }

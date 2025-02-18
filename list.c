@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:05:33 by vpoka             #+#    #+#             */
-/*   Updated: 2025/02/18 16:17:47 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/02/18 20:22:47 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ t_list	*create_new_node(char *str, int str_pos)
 	number = malloc(sizeof(int) * 2);
 	if (!number)
 		return (NULL);
-	number[0] = ft_atoi(str + str_pos);
+	number[0] = mod_atoi(str + str_pos);
 	number[1] = 0;
 	if (number[0] == 0 && !is_num_0(str_pos, str))
 		return (free(number), NULL);

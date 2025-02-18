@@ -6,7 +6,7 @@
 #    By: vpoka <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 13:14:45 by vpoka             #+#    #+#              #
-#    Updated: 2025/02/18 13:29:49 by vpoka            ###   ########.fr        #
+#    Updated: 2025/02/18 20:21:48 by vpoka            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRCS =  push_swap.c \
 		rotations.c \
 		split.c \
 		utils.c \
-		stack.c
+		stack.c \
+		mod_atoi.c
 
 
 OBJS = $(SRCS:.c=.o)

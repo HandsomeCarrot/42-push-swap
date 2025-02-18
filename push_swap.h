@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:07:59 by vpoka             #+#    #+#             */
-/*   Updated: 2025/02/18 15:25:37 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/02/18 20:26:43 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,9 @@ void				lst_min_max(t_list *lst, int *min, int *max,
 						int normalized);
 int					lst_sorted(t_list *lst);
 int					list_has_duplicates(t_list *lst);
+
+//--------mod_atoi.c--------//
+
+int					mod_atoi(const char *nptr);
 
 #endif

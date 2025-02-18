@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:05:33 by vpoka             #+#    #+#             */
-/*   Updated: 2025/02/18 15:25:48 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/02/18 16:17:47 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ static int	skip_nums(char *str, int str_pos)
 		str_pos++;
 	while (ft_isdigit(str[str_pos]))
 		str_pos++;
+	if (str[str_pos] && str_pos == skip_space(str_pos, str))
+		return (-1);
 	return (str_pos);
 }
 
@@ -155,6 +157,8 @@ t_list	*create_list(int ac, char **av)
 				return (ft_lstclear(&top, &free), NULL);
 			ft_lstadd_back(&top, new_node);
 			str_pos = skip_nums(av[arg], str_pos);
+			if (str_pos == -1)
+				return (ft_lstclear(&top, &free), NULL);
 			str_pos = skip_space(str_pos, av[arg]);
 		}
 		arg++;

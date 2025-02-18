@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:27:28 by vpoka             #+#    #+#             */
-/*   Updated: 2025/01/28 14:48:52 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/01/31 18:11:07 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 # define LIBFT_H
 
 # include <limits.h>
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+//-----------------------------------LIBFT-----------------------------------//
 
 char				*ft_itoa(int n);
 char				**ft_split(char const *s, char c);
@@ -57,7 +60,7 @@ void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 
-//-----------------------------------BONUS-----------------------------------//
+//------------------------------BONUS------------------------------//
 
 typedef struct s_list
 {
@@ -65,7 +68,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-unsigned int		ft_lstsize(t_list *lst);
+int					ft_lstsize(t_list *lst);
 
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
@@ -77,5 +80,18 @@ void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
+
+//-----------------------------------PRINTF----------------------------------//
+
+int					ft_printf(const char *format, ...);
+int					print_arg(const char **format, va_list args);
+int					print_char(va_list args);
+int					print_str(va_list args);
+int					print_int(va_list args);
+int					print_uint(va_list args);
+int					print_hex(va_list args, const char c);
+void				put_hex(unsigned long num, int *len, char *base);
+int					print_ptr(va_list args);
+int					print_percent(void);
 
 #endif

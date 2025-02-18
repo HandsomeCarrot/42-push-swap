@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:39:05 by vpoka             #+#    #+#             */
-/*   Updated: 2025/01/22 19:29:36 by vpoka            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:23:37 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@
  * @param lst A pointer to the first element of the linked list.
  * @return The number of elements in the linked list.
  */
-unsigned int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	list_size;
+	int	res;
 
-	list_size = 0;
+	res = 0;
 	while (lst)
 	{
-		list_size++;
+		res++;
 		lst = lst->next;
 	}
-	return (list_size);
+	return (res);
 }
 
 /*#include <stdio.h>

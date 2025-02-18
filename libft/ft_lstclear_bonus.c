@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 14:09:19 by vpoka             #+#    #+#             */
-/*   Updated: 2025/01/21 21:12:29 by vpoka            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:17:30 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@
  */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*next_node;
+	t_list	*next;
 
-	while (lst && *lst)
+	while (*lst)
 	{
-		next_node = (*lst)->next;
+		next = (*lst)->next;
 		ft_lstdelone(*lst, del);
-		*lst = next_node;
+		*lst = next;
 	}
 	*lst = NULL;
 }

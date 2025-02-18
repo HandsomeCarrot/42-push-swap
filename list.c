@@ -6,7 +6,7 @@
 /*   By: vpoka <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:05:33 by vpoka             #+#    #+#             */
-/*   Updated: 2025/01/30 15:01:22 by vpoka            ###   ########.fr       */
+/*   Updated: 2025/02/18 13:02:38 by vpoka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,8 @@ t_list	*create_new_node(char *str, int str_pos)
  * 
  * @param ac Argument count from main
  * @param av Array of string arguments from main
- * @param empty Pointer to flag indicating if list is empty (1=empty, 0=not empty)
+ * @param empty Pointer to flag indicating if list is empty
+ * (1=empty, 0=not empty)
  * @return t_list* Pointer to first node of created list, NULL if:
  *                 - Memory allocation fails
  *                 - Invalid number format detected

@@ -6,7 +6,7 @@
 #    By: vpoka <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 13:14:45 by vpoka             #+#    #+#              #
-#    Updated: 2025/01/31 17:52:20 by vpoka            ###   ########.fr        #
+#    Updated: 2025/02/18 13:29:49 by vpoka            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 LIBFT = ./libft/libft.a
 
-SRCS =  main.c \
+SRCS =  push_swap.c \
 		push.c \
 		swap.c \
 		rotate.c \
